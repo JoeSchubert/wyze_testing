@@ -3,9 +3,11 @@ import time
 
 class Token:
     refresh_time_threshold = 3600
+    TWO_FACTOR_TOTP = "TOTP"
+    TWO_FACTOR_SMS = "SMS"
 
     def __init__(self, phone_id=None, user_name=None, user_password=None, access_token=None, refresh_token=None,
-                 refresh_time=None, two_factor_enabled=False):
+                 refresh_time=None, two_factor_enabled=False, two_factor_type=None):
         self.phone_id: str = phone_id
         self.user_name: str = user_name
         self.user_password: str = user_password
@@ -13,6 +15,7 @@ class Token:
         self.refresh_token: str = refresh_token
         self.refresh_time: float = refresh_time
         self.two_factor_enabled: bool = two_factor_enabled
+        self.two_factor_type: str = two_factor_type
 
     def set_phone_id(self, phone_id: str):
         self.phone_id = phone_id
@@ -50,8 +53,14 @@ class Token:
     def get_refresh_time(self):
         return self.refresh_time
 
-    def set_two_factor_enabled(self, enabled: bool):
-        self.two_factor_enabled = enabled
+    # set_two_factor_enabled handles when saving the two_factor_type
 
     def get_two_factor_enabled(self):
         return self.two_factor_enabled
+
+    def set_two_factor_type(self, two_factor_type: str):
+        self.two_factor_enabled = True
+        self.two_factor_type = two_factor_type
+
+    def get_two_factor_type(self):
+        return self.two_factor_type

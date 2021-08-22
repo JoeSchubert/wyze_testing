@@ -12,3 +12,4 @@ SV = "9d74946e652647e9b6c9d59326aef104"
 URL_LOGIN = 'https://auth-prod.api.wyze.com/user/login'
 URL_SEND_SMS = 'https://auth-prod.api.wyze.com/user/login/sendSmsCode'
 URL_REFRESH_TOKEN = 'https://api.wyzecam.com/app/user/refresh_token'
+URL_OBJECT_LIST = 'https://api.wyzecam.com/app/v2/home_page/get_object_list'
